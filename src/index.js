@@ -8,7 +8,7 @@ import createStore from './store/createStore';
 import AppWithNavigationState from './AppWithNavigationState';
 
 const store = createStore();
-export default class RnNavReudux extends Component {
+export default class RnNavRedux extends Component {
     render() {
         return (
             <Provider store={store}>
@@ -18,4 +18,4 @@ export default class RnNavReudux extends Component {
     }
 };
 
-AppRegistry.registerComponent('RnNavReudx', () => RnNavReudux);
+AppRegistry.registerComponent('RnNavReudx', () => RnNavRedux);
