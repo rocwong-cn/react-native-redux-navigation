@@ -5,9 +5,17 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../reducers';
 import logger from 'redux-logger';
+import {
+    createReactNavigationReduxMiddleware,
+} from 'react-navigation-redux-helpers';
+
+const navMiddleware = createReactNavigationReduxMiddleware(
+    "root",
+    state => state.nav,
+);
 
 // 定义中间件数组，默认包括thunk middleware
-const middlewares = [thunk.withExtraArgument()];
+const middlewares = [thunk.withExtraArgument(),navMiddleware];
 
 // 只有开发环境才使用logger middleware
 if (__DEV__) {

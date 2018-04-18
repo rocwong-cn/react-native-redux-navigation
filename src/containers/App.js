@@ -49,12 +49,21 @@ class App extends Component {
                     </Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity style={styles.button} onPress={this._toTab.bind(this)}>
+                    <Text style={styles.instructions}>
+                        To Tab Screen
+                    </Text>
+                </TouchableOpacity>
+
             </View>
         );
     }
 
     _toDetail() {
         this.props.navigation.navigate('Detail')
+    }
+    _toTab() {
+        this.props.navigation.navigate('TabBar')
     }
 }
 
@@ -79,7 +88,8 @@ const styles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red'
+        backgroundColor: 'red',
+        marginBottom:20
     }
 });
 

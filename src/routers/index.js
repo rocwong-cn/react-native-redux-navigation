@@ -4,10 +4,11 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { View } from 'react-native';
-import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator';
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
 
 import App from '../containers/App';
 import Detail from '../containers/Detail';
+import TabBar from './TabBar';
 
 //安卓端需要加上一個headerRight讓title居中
 const headerOptions = {
@@ -24,6 +25,7 @@ const headerOptions = {
 const Routers = StackNavigator({
     App: { screen: App, navigationOptions: { headerTitle: 'APP', ...headerOptions } },
     Detail: { screen: Detail, navigationOptions: { headerTitle: 'Detail', ...headerOptions } },
+    TabBar: { screen: TabBar, navigationOptions: { headerStyle: { backgroundColor: '#fff' } } },
 }, {
     headerMode: 'screen',
     transitionConfig: () => ({
